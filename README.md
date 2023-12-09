@@ -50,12 +50,28 @@ This command will start the AI model and the Flask web service containers.
 ### Access the Service
 1. Open a web browser and navigate to http://localhost:5000 to access the Flask web service.
 
+### Push images to Docker hub repository 
+1. Login to docker hub 
+   ```bash 
+   docker login
+   ```
+2. Tag the local images
+    ```bash 
+    docker tag flask-app your-docker-hub-username/my-repo:my-tag
+    docker tag mysql-db  your-docker-hub-username/my-repo:my-tag
+    docker tag model-container your-docker-hub-username/my-repo:my-tag
+    ```
+3. Push the images to Docker Hub
+  ```bash 
+    docker push your-docker-hub-username/my-repo:my-tag
+   ```
+
 
 ## 4. Set Up Kubernetes Deployment
 
 ### Prerequisites
 1. Ensure you have `kubectl` and `minikube` installed and  configured to connect to your Kubernetes cluster.
-2. Have a Docker image of your application pushed to a container registry.
+2. Have a Docker image of your application pushed to a Docker hub repository.
 
 ### Deploy to Kubernetes
 1. Open the `app-deployment.yaml` file.
