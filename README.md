@@ -3,7 +3,7 @@
 
 This provides instructions on setting up and running the AI model, the Flask web service, and the Kubernetes deployment for the application.
 
-## 1. Set Up the AI Model
+
 
 ### Install Dependencies
 1. Ensure you have Python and pip installed.
@@ -11,7 +11,7 @@ This provides instructions on setting up and running the AI model, the Flask web
    ```bash
    pip install -r requirements.txt
    ```
-
+## 1. Set Up the AI Model
 ### Train the Model
 1. Run the following command to train the model and save it:
    ```bash
