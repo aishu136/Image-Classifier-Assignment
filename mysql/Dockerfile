@@ -8,4 +8,3 @@ COPY imageClassifier_prediction_logs.sql /docker-entrypoint-initdb.d/
 ENV MYSQL_ROOT_PASSWORD=root
 ENV MYSQL_DATABASE=imageClassifier
 
-
