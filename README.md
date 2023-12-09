@@ -28,10 +28,32 @@ This provides instructions on setting up and running the AI model, the Flask web
    ```
 2. The web service will be accessible at `http://localhost:5000`.
 
-## 3. Set Up Kubernetes Deployment
+## 3. Set Up Docker
 
 ### Prerequisites
-1. Ensure you have `kubectl` configured to connect to your Kubernetes cluster.
+Ensure you have Docker installed.
+
+### Build Docker Images 
+1. Run the following command to build the Docker images for the AI model and the Flask web service:
+   ```bash
+  docker-compose build
+   ```
+### Run Docker Containers
+1. After the images are built, run the Docker containers using the following command:
+   ```bash 
+   docker-compose up
+   ````
+This command will start the AI model and the Flask web service containers.
+2. The web service will be accessible at http://localhost:5000.
+
+### Access the Service
+1. Open a web browser and navigate to http://localhost:5000 to access the Flask web service.
+
+
+## 4. Set Up Kubernetes Deployment
+
+### Prerequisites
+1. Ensure you have `kubectl` and `minikube` installed and  configured to connect to your Kubernetes cluster.
 2. Have a Docker image of your application pushed to a container registry.
 
 ### Deploy to Kubernetes

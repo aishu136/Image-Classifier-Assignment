@@ -7,4 +7,7 @@ COPY imageClassifier_prediction_logs.sql /docker-entrypoint-initdb.d/
 # Set environment variables for MySQL
 ENV MYSQL_ROOT_PASSWORD=root
 ENV MYSQL_DATABASE=imageClassifier
+ENV MYSQL_ROOT_HOST= localhost
 
+
+EXPOSE 3306
