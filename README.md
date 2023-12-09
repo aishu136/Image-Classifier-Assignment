@@ -36,13 +36,14 @@ Ensure you have Docker installed.
 ### Build Docker Images 
 1. Run the following command to build the Docker images for the AI model and the Flask web service:
    ```bash
-  docker-compose build
+   docker-compose build
    ```
+
 ### Run Docker Containers
 1. After the images are built, run the Docker containers using the following command:
    ```bash 
    docker-compose up
-   ````
+   ```
 This command will start the AI model and the Flask web service containers.
 2. The web service will be accessible at http://localhost:5000.
 
