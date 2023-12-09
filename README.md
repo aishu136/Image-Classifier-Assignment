@@ -5,6 +5,13 @@ This provides instructions on setting up and running the AI model, the Flask web
 
 ## 1. Set Up the AI Model
 
+### Install Dependencies
+1. Ensure you have Python and pip installed.
+2. Install the required Python packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
 ### Train the Model
 1. Run the following command to train the model and save it:
    ```bash
@@ -13,13 +20,6 @@ This provides instructions on setting up and running the AI model, the Flask web
 2. The trained model will be saved in the directory.
 
 ## 2. Set Up the Flask Web Service
-
-### Install Dependencies
-1. Ensure you have Python and pip installed.
-2. Install the required Python packages:
-   ```bash
-   pip install -r requirements.txt
-   ```
 
 ### Run the Flask App Locally
 1. Run the following command to start the Flask app locally:
