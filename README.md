@@ -48,11 +48,5 @@ This provides instructions on setting up and running the AI model, the Flask web
    ```
 2. Access the web service at the provided external IP.
 
-## Additional Notes
-- You can scale the deployment using:
-   ```bash
-   kubectl scale deployment your-app-deployment --replicas=<desired_replica_count>
-   ```
-
 
 
