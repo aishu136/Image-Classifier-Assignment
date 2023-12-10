@@ -58,7 +58,7 @@ This command will start the AI model and the Flask web service containers.
 2. Tag the local images
     ```bash 
     docker tag flask-app your-docker-hub-username/my-repo:my-tag
-    docker tag mysql-db  your-docker-hub-username/my-repo:my-tag
+    docker tag mysqldb  your-docker-hub-username/my-repo:my-tag
     docker tag model-container your-docker-hub-username/my-repo:my-tag
     ```
 3. Push the images to Docker Hub

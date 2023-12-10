@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: aishwaryasrp/mysql-db:latest  
+        image: aishwaryasrp/mysqldb:latest  
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: root
