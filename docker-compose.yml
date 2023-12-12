@@ -1,7 +1,29 @@
 version: "3.2"
 
 services:
-  app:
+   db:
+    build:
+      context: ./mysql-init
+    restart: always
+    container_name: "mysqldb"
+    environment:
+         MYSQL_DATABASE: "imageClassifier"
+         MYSQL_ROOT_PASSWORD: "root"
+    ports:
+       - "3307:3306"
+    volumes:
+       - ./mysql-init/init.sql:/docker-entrypoint-initdb.d/init.sql
+       - ./data:/var/lib/mysql
+    networks:
+      - imageclass
+       
+   model:
+    build:
+      context: ./model
+    container_name: "modelcontainer"
+    networks:
+      - imageclass
+   app:
     build: .
     command: sh -c "sleep 10s ; python app.py"
     container_name: "flask-app"
@@ -10,25 +32,13 @@ services:
     depends_on:
       - db
       - model
+    networks:
+     - imageclass
+networks:
+  imageclass:
+    driver: "bridge"
 
-  db:
-    build:
-      context: ./mysql
-    restart: always
-    container_name: "mysqldb"
-    environment:
-         MYSQL_ROOT_PASSWORD: "root"
-         MYSQL_DATABASE: "imageClassifier"
-         MYSQL_HOST: "localhost"
-         MYSQL_USER: "root"
-         MYSQL_PASSWORD: "root"
-    ports:
-       - "3307:3306"
-    volumes:
-       - ./db:/docker-entrypoint-initdb.d/:ro
+ 
   
 
-  model:
-    build:
-      context: ./model
-    container_name: "modelcontainer"
+ 

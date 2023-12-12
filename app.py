@@ -20,7 +20,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = os.urandom(24)
 
 db_connection = mysql.connector.connect(
-    host='localhost',
+    host='db',
     port="3306",
     user='root',
     password='root',
@@ -104,5 +104,5 @@ def logout():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0')
 
